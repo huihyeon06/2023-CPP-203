@@ -6,8 +6,10 @@ using namespace std;
 
 int main(void) {
 
+	int year = 2023;
+
 	// <<  : 출력연산자
 	//endl : 개행
-	cout << "Hello World\n" << endl;
+	cout << "Hello World " << year << endl;
 	return 0;
 }
