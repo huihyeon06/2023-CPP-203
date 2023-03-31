@@ -17,6 +17,12 @@ public:
 	string telephone;
 	string department;
 	string home;
+
+	// class 멤버 함수를 가질 수 있다
+	void print(void) {
+		cout << "이름 : " << name << "\n과 : " <<department << "\n학번 : " << studentId <<
+			"\n전화번호 : " << telephone << "\n집주소 : " << home << endl;
+	}
 };
 
 int main(void) {
@@ -30,8 +36,9 @@ int main(void) {
 	kim.studentId = 2211;
 	kim.telephone = "123-4567-8912";
 
-	cout << "이름 : " << kim.name << "\n과 : " << kim.department << "\n학번 : " << kim.studentId <<
-		"\n전화번호 : " << kim.telephone << "\n집주소 : " << kim.home << endl;
+	kim.print();
+
+	
 
 	return 0;
 }
