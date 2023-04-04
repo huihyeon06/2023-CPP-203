@@ -18,6 +18,9 @@ public:
 	string department;
 	string home;
 
+	//생성자 (constructor) : 객체를 생성할 때 호출되는 함수
+	//생성자를 정의하지 않으면 default로 매개변수가 없는 생성자가 정의된다
+
 	// class 멤버 함수를 가질 수 있다
 	void print(void) {
 		cout << "이름 : " << name << "\n과 : " <<department << "\n학번 : " << studentId <<
