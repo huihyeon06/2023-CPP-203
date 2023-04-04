@@ -15,6 +15,11 @@ class Student {
 public:
 	//생성자 (constructor) : 객체를 생성할 때 호출되는 함수
 	//생성자를 정의하지 않으면 default로 매개변수가 없는 생성자가 정의된다
+	int studentId;
+	string name;
+	string telephone;
+	string department;
+	string home;
 	Student() {
 		home = "김포";
 		department = "소프트웨어과";
@@ -22,28 +27,30 @@ public:
 		studentId = 2211;
 		telephone = "123-4567-8912";
 
-		print();
+	}
+	Student(int _studentId, string _name, string _telephone, string _department, string _home) {
+		studentId = _studentId;
+		name = _name;
+		telephone = _telephone;
+		department = _department;
+		home = _home;
 	}
 	// class 멤버 함수를 가질 수 있다
 	void print(void) {
 		cout << "이름 : " << name << "\n과 : " << department << "\n학번 : " << studentId <<
 			"\n전화번호 : " << telephone << "\n집주소 : " << home << endl;
 	}
-
-private:
-	int studentId;
-	string name;
-	string telephone;
-	string department;
-	string home;
+	
 
 };
 
 int main(void) {
-	
-	// 자료형 : Student(Class 생략 가능)
-	Student kim;
 
+	//매개변수가 없는 생성자
+	Student kim = Student();
+	//kim.print();
+	Student kim2 = Student(2211, "kim", "010-0000-0000", "솦", "한국");
+	kim2.print();
 
 	return 0;
 }
