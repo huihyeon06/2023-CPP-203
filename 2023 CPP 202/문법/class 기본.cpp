@@ -29,14 +29,11 @@ public:
 		telephone = "123-4567-8912";
 
 	}
-	Student(int studentId, string name, string telephone, string department, string home) {
-		//this : 객체 자기자신을 가리키는 포인터(주소값)
-		//멤버변수와 매개변수가 이름이 같아도 구별가능
-		this->studentId = studentId;
-		this->name = name;
-		this->telephone = telephone;
-		this->department = department;
-		this->home = home;
+	Student(int _studentId, string _name, string _telephone, string _department, string _home)
+		//멤버변수 초기화. const/참조형 멤버변수 사용가능
+		: studentId(_studentId), name(_name), telephone(_telephone), department(_department), home(_home)
+	{
+		
 	}
 	// class 멤버 함수를 가질 수 있다
 	void print(void) {
