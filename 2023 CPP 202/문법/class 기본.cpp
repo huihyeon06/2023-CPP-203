@@ -49,9 +49,14 @@ int main(void) {
 	//매개변수가 없는 생성자
 	Student kim = Student();
 	//kim.print();
-	Student kim2 = Student(2211, "kim", "010-0000-0000", "솦", "한국");
-	kim2.print();
+
+	//정적할당
+	//Student kim2 = Student(2211, "kim", "010-0000-0000", "솦", "한국");
+	//kim2.print();
 	
+	//동적할당된 공간은 포인터로 접근한다
+	Student* stu3 = new Student(22, "율곡", "010-0000-0000", "유교", "한성");
+	stu3->print();
 
 	return 0;
 }
