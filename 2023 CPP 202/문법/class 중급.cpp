@@ -11,12 +11,13 @@ public:
 		strcpy(c_str_, str);
 		size_ = l;
 		//c_str_ = str;
+		cout << "MString 생성자 호출 완료" << endl;
 	}
 	//소멸자(destructor)
 	~MString() {
 		//소멸자로 생성자에서 동적할당한 메모리 해제
 		delete[] c_str_;
-
+		cout << "MString 소멸자 호출 완료" << endl;
 	}
 	unsigned int size(void) {
 		return size_;
