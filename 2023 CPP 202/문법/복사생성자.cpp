@@ -12,7 +12,7 @@ public:
 		strcpy(str_, jhqz);
 		cout << "일반생성자 호출" << endl;
 	}
-	//복사생성자(깊은복사)
+	//복사생성자(얕은복사) 오류발생
 	Munja(const Munja& hj) :str_(hj.str_)
 	{
 		str_ = new char[strlen(hj.str_) + 1];
