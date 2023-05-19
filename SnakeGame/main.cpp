@@ -21,6 +21,10 @@ int main(void) {
 			snake.move(1, 0);
 		if (Keyboard::isKeyPressed(Keyboard::Left))
 			snake.move(-1, 0);
+		if (Keyboard::isKeyPressed(Keyboard::Up))
+			snake.move(0, -1);
+		if (Keyboard::isKeyPressed(Keyboard::Down))
+			snake.move(0, 1);
 		window.clear();
 
 		window.draw(snake);
