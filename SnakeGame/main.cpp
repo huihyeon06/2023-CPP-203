@@ -39,6 +39,13 @@ int main(void) {
 			snake.move(0, -5);
 		if (Keyboard::isKeyPressed(Keyboard::Down))
 			snake.move(0, 5);
+		
+		//intersects -> 교집합(겹치는 부분)
+		//뱀이 사과를 먹었을 때,
+		if (snake.getGlobalBounds().intersects(apple.getGlobalBounds())) {
+			apple.setPosition(rand() % (640 - 50), rand() % (480 - 50));
+		}
+
 		window.clear();
 
 		window.draw(apple);
