@@ -14,6 +14,11 @@ int main(void) {
 	snake.setPosition(100, 300);
 	snake.setSize(Vector2f(50, 50));
 
+	RectangleShape apple;
+	apple.setFillColor(Color::Red);
+	apple.setPosition(200, 400);
+	apple.setSize(Vector2f(50, 50));
+
 	while (window.isOpen()) {
 		Event e;
 		while (window.pollEvent(e)) {
@@ -31,7 +36,8 @@ int main(void) {
 			snake.move(0, 5);
 		window.clear();
 
-		window.draw(snake);
+		window.draw(apple);
+		window.draw(snake);//draw를 늦게 할 수록 더 위에 있다
 
 		window.display();
 	}
