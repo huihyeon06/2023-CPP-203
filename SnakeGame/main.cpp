@@ -5,9 +5,13 @@
 using namespace sf;
 
 int main(void) {
+	const int WIDTH = 1000;
+	const int HEIGHT = 800;
+	const int BLOCK_SIZE = 50;
+
 	srand(time(NULL));
 
-	RenderWindow window(VideoMode(640, 480), "Snake Game");
+	RenderWindow window(VideoMode(WIDTH, HEIGHT), "Snake Game");
 
 	//컴퓨터가 1초 동안 처리하는 횟수를 60으로 제한한다
 	//Frame Per Second를 60으로 조절
@@ -16,13 +20,13 @@ int main(void) {
 	RectangleShape snake;
 	snake.setFillColor(Color::White);
 	snake.setPosition(100, 300);
-	snake.setSize(Vector2f(50, 50));
+	snake.setSize(Vector2f(BLOCK_SIZE, BLOCK_SIZE));
 
 	RectangleShape apple;
 	apple.setFillColor(Color::Red);
 	//640에 50을 뺀 이유는 사과가 화면 밖에 벗어나지 않게 하기 위함
-	apple.setPosition(rand()%(640-50), rand()%(480-50));
-	apple.setSize(Vector2f(50, 50));
+	apple.setPosition(rand()%(WIDTH - BLOCK_SIZE), rand()%(HEIGHT - BLOCK_SIZE));
+	apple.setSize(Vector2f(BLOCK_SIZE, BLOCK_SIZE));
 
 	while (window.isOpen()) {
 		Event e;
@@ -43,7 +47,7 @@ int main(void) {
 		//intersects -> 교집합(겹치는 부분)
 		//뱀이 사과를 먹었을 때, 사과의 위치를 랜덤으로 리스폰
 		if (snake.getGlobalBounds().intersects(apple.getGlobalBounds())) {
-			apple.setPosition(rand() % (640 - 50), rand() % (480 - 50));
+			apple.setPosition(rand() % (WIDTH - BLOCK_SIZE), rand() % (HEIGHT - BLOCK_SIZE));
 		}
 
 		window.clear();
