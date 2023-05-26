@@ -75,7 +75,7 @@ int main(void) {
 
 		//intersects -> 교집합(겹치는 부분)
 		//뱀이 사과를 먹었을 때, 사과의 위치를 랜덤으로 리스폰
-		if (snake.getGlobalBounds().intersects(apple.getGlobalBounds())) {
+		if (snake_x==apple_x && snake_y ==apple_y) {
 			apple_x = rand() % G_WIDTH, apple_y = rand() % G_HEIGHT;
 			apple.setPosition(apple_x * BLOCK_SIZE, apple_y * BLOCK_SIZE);
 		}
