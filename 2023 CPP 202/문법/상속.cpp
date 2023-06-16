@@ -12,6 +12,7 @@ public:
 	//소멸자에는 무조건 virtual을 넣자(메모리 누수 방지)
 	virtual ~Animal() { cout << "동물 소멸자" << endl; }
 	//동적 바인딩
+	//동물은 추상적인 존재이므로 구체적인 구현(정의)은 자식클래스에서
 	virtual void Bark(void) { cout << "동물 짖는다" << endl; }
 	virtual void Eat(void) { cout << "동물 먹는다" << endl; }
 	virtual void Hunt(void) { cout << "동물 사냥한다" << endl; }
@@ -34,11 +35,17 @@ public:
 	void Bark() override{
 		cout << "꽥" << endl;
 	}
+	//순수가상함수(추상메서드)는 반드시 자식에서 구현해야 한다
+	void Eat() override{}
+	void Hunt() override{}
 private:
 	int leg_length_;
 };
 
 int main(void) {
+	//추상클래스(하나라도 추상메서드가 존재하는 클래스)는 객체(인스턴스)를 만들 수 없다
+	//Animal* animal = new Animal(1, "1");
+
 	Animal* animal = new Animal(18, "동물이");
 	animal->Bark(); //동물 짖는다
 	delete animal;
