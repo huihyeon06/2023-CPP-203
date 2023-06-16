@@ -19,7 +19,7 @@ private:
 	string name_;
 };
 
-class Crane :public Animal{
+class Crane :public Animal {
 public:
 	//별도의 언급이 없어도 매개변수가 없는 부모생성자가 호출된다
 	Crane(int age, string name, int leg_length) :Animal(age, name)
@@ -29,7 +29,8 @@ public:
 	}
 	~Crane() { cout << "두루미 소멸자" << endl; }
 
-	void Bark() {
+	//오타같은 실수를 방지하기 위해 override 키워드를 사용(Java의 @override)
+	void Bark() override{
 		cout << "꽥" << endl;
 	}
 private:
@@ -40,9 +41,6 @@ int main(void) {
 	Animal* animal = new Animal(18, "동물이");
 	animal->Bark(); //동물 짖는다
 	delete animal;
-	Crane* crane = new Crane(3, "지우",108); //부모의 멤버변수를 사용
-	crane->Bark(); //동물 짖는다(정적 바인딩부모의 멤버함수를 사용
 
-	delete crane;
 	return 0;
 }
