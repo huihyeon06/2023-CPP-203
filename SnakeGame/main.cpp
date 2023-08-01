@@ -110,6 +110,22 @@ int main(void) {
 	Snake snake = Snake(DIR_DOWN, 1); //뱀이 이동하는 방향
 	snake.InitBody();
 
+	Font font;
+	if (!font.loadFromFile("c:\\Windows\\Fonts\\Arial.ttf")) {
+		printf("폰트 불러오기 실패");
+		return -1;
+	}
+
+	Text t_info;
+	t_info.setFont(font);
+	t_info.setFillColor(Color::Magenta);
+	t_info.setCharacterSize(30);
+	t_info.setPosition(0, 0); 
+
+
+
+	char t_info_buf[100];
+
 
 	Apple apple;
 	apple.x_ = rand() % G_WIDTH, apple.y_ = rand() % G_HEIGHT;
@@ -139,7 +155,9 @@ int main(void) {
 
 		//update
 
-		printf("score : %d \n", snake.GetScore());
+		printf(t_info_buf,"score : %d \n", snake.GetScore());
+		t_info.setString(t_info_buf);
+
 		snake.UpdateBody();
 		snake.UpdateHead();
 
@@ -166,6 +184,7 @@ int main(void) {
 			window.draw(snake.GetBody()[i].sprite_);
 		}
 		window.draw(apple.sprite_);//draw를 늦게 할 수록 더 위에 있다
+		window.draw(t_info);
 
 		window.display();
 	}
