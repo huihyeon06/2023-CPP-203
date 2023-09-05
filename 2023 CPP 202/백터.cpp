@@ -19,7 +19,7 @@ int main(void)
 	arr.push_back(50);
 		//기존의 값을 복사한다
 
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < arr.size(); i++) {
 		cout << arr[i] << " ";
 	}
 
