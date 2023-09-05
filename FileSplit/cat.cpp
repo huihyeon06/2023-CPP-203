@@ -1,10 +1,6 @@
-#include<iostream>
+#include "all.h"
 
-using namespace std;
-
-#include "cat.h"
-
-void Cat :: bark(void)
+void Cat::bark(void)
 {
 	cout << "¾ß¿Ë" << endl;
 }

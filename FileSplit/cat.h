@@ -1,14 +1,10 @@
-#pragma once
-#include "animal.h"
+#include "all.h"
 
 using namespace std;
 
 class Cat : public Animal {
 public:
-	void bark(void)
-	{
-		cout << "¾ß¿Ë" << endl;
-	}
+	void bark(void);
 private:
 	int claw;
 };

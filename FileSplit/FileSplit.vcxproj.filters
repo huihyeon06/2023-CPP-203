@@ -18,6 +18,12 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="cat.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="dog.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animal.h">
@@ -27,6 +33,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="cat.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="all.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

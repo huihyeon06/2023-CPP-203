@@ -127,9 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cat.cpp" />
+    <ClCompile Include="dog.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="all.h" />
     <ClInclude Include="animal.h" />
     <ClInclude Include="cat.h" />
     <ClInclude Include="dog.h" />
