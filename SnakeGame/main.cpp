@@ -123,8 +123,8 @@ int main(void) {
 	t_info.setPosition(0, 0); 
 
 
-
-	char t_info_buf[100];
+	//유니코드(한글)를 호환하기 위한 자료형으로 변경
+	wchar_t t_info_buf[100];
 
 
 	Apple apple;
@@ -155,7 +155,7 @@ int main(void) {
 
 		//update
 
-		printf(t_info_buf,"score : %d \n", snake.GetScore());
+		swprintf(t_info_buf, L"점수 : %d \n", snake.GetScore());
 		t_info.setString(t_info_buf);
 
 		snake.UpdateBody();

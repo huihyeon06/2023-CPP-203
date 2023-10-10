@@ -19,8 +19,10 @@ int main(void)
 	arr.push_back(50);
 		//기존의 값을 복사한다
 
-	for (int i = 0; i < arr.size(); i++) {
-		cout << arr[i] << " ";
+	vector<int>::iterator iter;
+	//반복자(iterator)를 활용하여 모든 원소를 출력
+	for (iter = arr.begin(); iter!=arr.end(); iter++) {
+		cout << *iter << " ";
 	}
 
 	return 0;
