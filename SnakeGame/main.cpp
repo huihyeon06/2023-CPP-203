@@ -3,10 +3,13 @@
 #include<time.h> //time()
 #include<stdio.h>
 
-#define DIR_UP		0
-#define DIR_DOWN	1
-#define DIR_RIGHT	2
-#define DIR_LEFT	3
+
+enum Dir {
+	UP,
+	DOWN,
+	RIGHT,
+	LEFT
+};
 
 #define BODY_MAX	20
 
@@ -67,16 +70,16 @@ public:
 
 	//머리
 	void UpdateHead(void) {
-		if (GetDir() == DIR_UP && body_[0].y_ > 0) {
+		if (GetDir() == Dir::UP && body_[0].y_ > 0) {
 			body_[0].y_--;
 		}
-		else if (GetDir() == DIR_DOWN && body_[0].y_ < G_HEIGHT - 1) {
+		else if (GetDir() == Dir::DOWN && body_[0].y_ < G_HEIGHT - 1) {
 			body_[0].y_++;
 		}
-		else if (GetDir() == DIR_RIGHT && body_[0].x_ < G_WIDTH - 1) {
+		else if (GetDir() == Dir::RIGHT && body_[0].x_ < G_WIDTH - 1) {
 			body_[0].x_++;
 		}
-		else if (GetDir() == DIR_LEFT && body_[0].x_ > 0) {
+		else if (GetDir() == Dir::LEFT && body_[0].x_ > 0) {
 			body_[0].x_--;
 		}
 		body_[0].sprite_.setPosition(body_[0].x_ * BLOCK_SIZE, body_[0].y_ * BLOCK_SIZE);
@@ -107,7 +110,7 @@ int main(void) {
 	//Frame Per Second를 60으로 조절
 	window.setFramerateLimit(15);
 
-	Snake snake = Snake(DIR_DOWN, 1); //뱀이 이동하는 방향
+	Snake snake = Snake(Dir::DOWN, 1); //뱀이 이동하는 방향
 	snake.InitBody();
 
 	Font font;
@@ -141,16 +144,16 @@ int main(void) {
 				window.close();
 		}
 		if (Keyboard::isKeyPressed(Keyboard::Right)) {
-			snake.SetDir(DIR_RIGHT);
+			snake.SetDir(Dir::RIGHT);
 		}
 		else if (Keyboard::isKeyPressed(Keyboard::Left)) {
-			snake.SetDir(DIR_LEFT);
+			snake.SetDir(Dir::LEFT);
 		}
 		else if (Keyboard::isKeyPressed(Keyboard::Up)) {
-			snake.SetDir(DIR_UP);
+			snake.SetDir(Dir::UP);
 		}
 		else if (Keyboard::isKeyPressed(Keyboard::Down)) {
-			snake.SetDir(DIR_DOWN);
+			snake.SetDir(Dir::DOWN);
 		}
 
 		//update
