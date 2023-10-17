@@ -6,9 +6,11 @@ int main(void) {
 
 	int a[] = { 3,6,2,4,6 };
 
-	for (int i = 0; i < 5; i++) {
-		cout << a[i] << endl;
-	}
+	auto b = 4.6;
+
+	//x의 자료형은 int로 자동설정
+	for (auto x : a)
+		cout << x << endl;
 	
 	return 0;
 }
