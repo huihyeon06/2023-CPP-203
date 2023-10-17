@@ -9,7 +9,7 @@ int main(void) {
 	auto b = 4.6;
 
 	//x의 자료형은 int로 자동설정
-	for (auto x : a)
+	for (auto &x : a)
 		cout << x << endl;
 	
 	return 0;
